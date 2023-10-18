@@ -1,19 +1,16 @@
 ###cloud vars
 variable "token" {
   type        = string
-  sensitive   = true
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
 
 variable "cloud_id" {
   type        = string
-  sensitive   = true
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
 }
 
 variable "folder_id" {
   type        = string
-  sensitive   = true
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
@@ -37,16 +34,8 @@ variable "vpc_name" {
 
 ###ssh vars
 
-variable "vms_ssh_user" {
+variable "vms_ssh_root_key" {
   type        = string
-  default     = "ubuntu"
-  description = "check VM image"
-}
-
-variable "vms_ssh" {
-  type = map(any)
-  default = {
-    serial-port-enable = 1
-    pub_key = "~/.ssh/hwk.pub"
-    }
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM0LzrwzAXpYNbzSVxrmEthMFDvNwFMVXNF/dSz1P3dN eddsa-key-20230928"
+  description = "ssh-keygen -t ed25519"
 }

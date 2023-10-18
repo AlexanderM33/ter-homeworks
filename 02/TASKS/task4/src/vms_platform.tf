@@ -1,36 +1,4 @@
 
-variable "my_resources" {
-  type        = map(any)
-  default     = {
-    web = {
-      image = "ubuntu-2204-lts"
-      cores = 2             
-      memory = 1                  
-      core_fraction = 5 
-      preemptible = true 
-      platform = "standard-v1" 
-      nat = true  
-    }
-    db = {
-      image = "ubuntu-2204-lts"
-      cores = 2
-      memory = 2 
-      core_fraction = 20  
-      preemptible = true
-      platform = "standard-v1"
-      nat = true  
-    }
-
-  }
-  description = "power of variables"
-}
-
-
-
-
-
-
-/*
 variable "vm_web_name" {
   type        = string
   default     = "netology-develop-platform-web"
@@ -139,4 +107,3 @@ variable "vm_db_serial_port" {
   default     = "1"
   description = "db serial port"
 }
-*/
