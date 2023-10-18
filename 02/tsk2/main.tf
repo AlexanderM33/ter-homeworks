@@ -10,13 +10,13 @@ resource "yandex_vpc_subnet" "develop" {
 
 
 data "yandex_compute_image" "ubuntu" {
-  family = "ubuntu-2004-lts"
+  family = "ubuntu-2204-lts"
 }
 resource "yandex_compute_instance" "platform" {
   name        = "netology-develop-platform-web"
-  platform_id = "standart-v4"
+  platform_id = "standard-v1"
   resources {
-    cores         = 1
+    cores         = 2
     memory        = 1
     core_fraction = 5
   }
