@@ -30,3 +30,8 @@ resource "yandex_compute_instance" "web" {
   }
   allow_stopping_for_update = true
 }
+
+  network_interface {
+    subnet_id = yandex_vpc_subnet.develop.id
+    nat       = true
+  }
